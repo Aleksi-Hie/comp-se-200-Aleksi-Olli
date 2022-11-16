@@ -1,12 +1,8 @@
-import chai from chai
-import at from "../src/at.js"
-
-describe("At",()=>{
-    it("Should pick all objects"), ()=>{
-        const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
-        tested = at(object, ['a[0].b.c', 'a[1]'])
-        control = [3,4]
-        expect(tested).to.equal(control)
-        
-    }
-})
+var assert = require('assert');
+describe('Array', function () {
+  describe('#indexOf()', function () {
+    it('should return -1 when the value is not present', function () {
+      assert.equal([1, 2, 3].indexOf(4), -1);
+    });
+  });
+});
