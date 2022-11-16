@@ -1,4 +1,4 @@
-import chai from chai
+import chai from "chai"
 import at from "../src/words.js"
 
 
