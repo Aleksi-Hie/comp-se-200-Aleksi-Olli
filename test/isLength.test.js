@@ -30,5 +30,8 @@ describe("isLength", () => {
 	it("Too large value", () => {
 		expect(isLength(Number.MAX_INTEGER)).to.equal(false)
 	});
+	it("null value", () => {
+		expect(isLength(Number.MAX_INTEGER)).to.equal(false)
+	});
 })
 
