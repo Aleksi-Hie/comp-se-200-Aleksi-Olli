@@ -1,12 +1,26 @@
 import chai from "chai"
 import at from "../src/at.js"
 
-describe("At",()=>{
-    it("Should pick all objects"), ()=>{
+const expect = chai.expect
+
+describe("at", () => {
+    it("Valid object", () => {
         const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
-        tested = at(object, ['a[0].b.c', 'a[1]'])
-        control = [3,4]
-        expect(tested).to.equal(control)
-        
-    }
+        expect(at(object, ['a[0].b.c', 'a[1]'])).to.eql([3, 4])
+    })
+    it("Invalid object", () => {
+        expect(at(null, ['a[0].b.c', 'a[1]'])).to.eql([])
+    })
+    it("Invalid path", () => {
+        const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
+        expect(at(object, null)).to.eql([])
+    })
+    it("Invalid object and path", () => {
+        expect(at(null, null)).to.eql([])
+    })
+    it("Multiple paths", () => {
+        const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
+        expect(at(object, ['a[0].b.c', 'a[1]'], ['a[0].b.c', 'a[1]'])).to.eql([3, 4, 3, 4])
+    })
+
 })
