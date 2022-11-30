@@ -39,6 +39,9 @@ const middles = [2,3,4,5];
 const emptyArray = [[]];
 
 describe("filter", () => {
+	it("Null array", () => {
+		expect(filter(null, alwaysFalse)).to.deep.equal(emptyArray)
+	});
 	it("No elements pass", () => {
 		expect(filter(array, alwaysFalse)).to.deep.equal(emptyArray)
 	});
