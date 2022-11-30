@@ -1,13 +1,28 @@
 import chai from "chai"
 import mocha from "mocha"
-import at from "../src/at.js"
+import compact from "../src/compact.js"
 
-describe("At",()=>{
-    it("Should pick all objects"), ()=>{
-        const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
-        tested = at(object, ['a[0].b.c', 'a[1]'])
-        control = [3,4]
-        expect(tested).to.equal(control)
-        
+const expect = chai.expect
+describe("compact",()=>{
+    it("Remove all false or null values from array", ()=>{
+        const arr_ = [0, 1, false, 2, '', 3]
+        expect(compact(arr_)).to.eql([1, 2, 3])
+    })
+    it("All real values", ()=>{
+        const arr_ = [1, 2, 3]
+        expect(compact(arr_)).to.eql([1, 2, 3])
+    })
+    it("All null values", ()=>{
+        const arr_ = [null, null, null]
+        expect(compact(arr_)).to.eql([])
+    })
+    it("Invalid array", ()=>{
+        const arr_ = null
+        expect(compact(arr_)).to.eql([])
+    })
+    it("Empty array", ()=>{
+        const arr_ = []
+        expect(compact(arr_)).to.eql([])
+    })
     }
-})
+)
