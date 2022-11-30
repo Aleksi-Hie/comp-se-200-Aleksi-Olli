@@ -2,7 +2,6 @@ import chai from "chai"
 import at from "../src/at.js"
 const expect = chai.expect
 
-const expect = chai.expect
 
 describe("at", () => {
     it("Valid object", () => {
