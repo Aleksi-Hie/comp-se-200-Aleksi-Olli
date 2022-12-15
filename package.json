@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "coverage": "c8 mocha > ./node_modules/coveralls/bin/coveralls.js"
+    "coverage": "c8 --reporter -mocha-lcov-reporter --reporter=text mocha && cat ./coverage/lcov.info | coveralls"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +14,7 @@
     "c8": "^7.12.0",
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",
+    "istanbul": "^0.4.5",
     "mocha": "^10.1.0",
     "mocha-lcov-reporter": "^1.3.0"
   }
