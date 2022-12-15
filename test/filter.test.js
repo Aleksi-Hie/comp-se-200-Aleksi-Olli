@@ -25,23 +25,13 @@ function middleElements(value, indx, array){
     return true;
 }
 
-function lastElement(value, indx, array){
-	if(indx == array.length -1 ){
-		return true;
-	}
-	return false;
-}
-
-
 
 const array = [1,2,3,4,5,6];
 const middles = [2,3,4,5];
 const emptyArray = [[]];
 
 describe("filter", () => {
-	it("Null array", () => {
-		expect(filter(null, alwaysFalse)).to.deep.equal(emptyArray)
-	});
+
 	it("No elements pass", () => {
 		expect(filter(array, alwaysFalse)).to.deep.equal(emptyArray)
 	});
@@ -58,5 +48,11 @@ describe("filter", () => {
 		expect(filter(emptyArray, alwaysFalse)).to.deep.equal(emptyArray)
         expect(filter(emptyArray, alwaysTrue)).to.deep.equal(emptyArray)
 	});
+	it("null as input", () => {
+		expect(filter(null, alwaysFalse)).to.deep.equal(emptyArray)
+        expect(filter(null, alwaysTrue)).to.deep.equal(emptyArray)
+	});
+
+
 
 })
