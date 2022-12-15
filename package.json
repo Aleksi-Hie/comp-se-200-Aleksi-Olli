@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha && coveralls < coverage/lcov.info",
-    "coverage": "c8 mocha"
+    "test": "mocha",
+    "coverage": "c8 mocha > ./node_modules/coveralls/bin/coveralls.js"
   },
   "author": "",
   "license": "MIT",
