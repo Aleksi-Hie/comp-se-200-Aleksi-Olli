@@ -25,6 +25,10 @@ function lastFalse(value, indx, array){
 	return true;
 }
 
+function returnString(value, indx, array){
+	return "string";
+}
+
 const array = [1,2,3,4,5,6];
 const emptyArray = null;
 
@@ -48,6 +52,9 @@ describe("every", () => {
 	it("null array", () => {
 		expect(every(null, alwaysFalse)).to.equal(true)
 		expect(every(null, alwaysTrue)).to.equal(true)
+	});
+	it("Function doesn't return a bool", () => {
+		expect(every(array, returnString)).to.equal(false)
 	});
 
 })
