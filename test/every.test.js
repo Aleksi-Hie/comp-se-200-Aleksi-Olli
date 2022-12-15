@@ -45,5 +45,9 @@ describe("every", () => {
 		expect(every(emptyArray, alwaysFalse)).to.equal(true)
 		expect(every(emptyArray, alwaysTrue)).to.equal(true)
 	});
+	it("null array", () => {
+		expect(every(null, alwaysFalse)).to.equal(true)
+		expect(every(null, alwaysTrue)).to.equal(true)
+	});
 
 })
