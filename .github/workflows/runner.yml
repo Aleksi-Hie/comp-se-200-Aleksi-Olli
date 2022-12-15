@@ -1,7 +1,6 @@
 name: Test runner
 on: [push]
 jobs:
-  if: always()
   Run-mocha-tests:
     runs-on: ubuntu-latest
     steps:
@@ -11,6 +10,7 @@ jobs:
         node-version: '14'
     - run: npm install
     - run: npm run test
+      continue-on-error: true
   Run-c8-coverage:
     runs-on: ubuntu-latest
     steps:
@@ -19,8 +19,8 @@ jobs:
       with:
         node-version: '14'
     - run: npm install
-    - continue-on-error: true
     - run: npm run coverage
+      continue-on-error: true
     - name: Coveralls
       uses: coverallsapp/github-action@master
       with:
