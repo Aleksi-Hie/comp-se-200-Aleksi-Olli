@@ -1,7 +1,7 @@
 # Student template
 
 ## Purpose of this repository
-
+[![Coverage Status](https://coveralls.io/repos/github/Aleksi-Hie/comp-se-200-Aleksi-Olli/badge.svg?branch=main)](https://coveralls.io/github/Aleksi-Hie/comp-se-200-Aleksi-Olli?branch=main)
 This is a project template for students participating in Software Testing course
 at Tampere University.
 
